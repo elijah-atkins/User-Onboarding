@@ -12,6 +12,7 @@
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
     "sass": "^1.26.5",
+    "sass-node": "^4.11.2",
     "yup": "^0.28.4"
   },
   "scripts": {

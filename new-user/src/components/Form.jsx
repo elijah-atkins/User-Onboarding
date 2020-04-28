@@ -3,6 +3,38 @@ import * as yup from 'yup';
 import axios from 'axios';
 
 const Form = () => {
+    const [formState, setFormState] = useState({
+        name: "",
+        email: "",
+        password: "",
+        terms: ""
+    })
+    const [errors, setErrors] = useState({
+        name: "",
+        email: "",
+        password: "",
+        terms: ""
+    })
+
+    const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
+    const formSchema = yup.object().shape({
+        name: yup
+            .string()
+            .required("Name is a required field"),
+        email: yup
+            .string()
+            .email("Must enter a valid email address")
+            .required(),
+        password: yup  
+            .string()
+            .required('Please Enter your password')
+            .matches(
+                /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,}$/,
+                "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
+        ),
+    })
+
     return(
         <form>
             <label htmlFor="name">
@@ -35,7 +67,7 @@ const Form = () => {
                 />
                 Terms & Conditions
             </label>
-            <button>
+            <button disabled="isButtonDisabled">
                 Submit
             </button>
         </form>
