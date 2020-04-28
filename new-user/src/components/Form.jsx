@@ -3,7 +3,7 @@ import * as yup from 'yup';
 import axios from 'axios';
 
 const Form = () => {
-    const [post, setPost] = useState([])
+    const [user, setUser] = useState([])
     // managing state for our form inputs
     const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
@@ -57,12 +57,11 @@ const Form = () => {
 
     const formSubmit = e => {
         e.preventDefault();
-        console.log('form submitted')
         axios
         .post("https://reqres.in/api/users", formState)
         .then(response => {
-            console.log(response.data)
-          setPost(response.data);
+          console.log(response.data)
+          setUser(response.data);
           setFormState({
             name: "",
             email: "",
