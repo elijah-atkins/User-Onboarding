@@ -3,6 +3,7 @@ import * as yup from 'yup';
 import axios from 'axios';
 
 const Form = () => {
+    const [post, setPost] = useState([])
     // managing state for our form inputs
     const [isButtonDisabled, setIsButtonDisabled] = useState(true);
 
@@ -41,7 +42,7 @@ const Form = () => {
         formSchema.isValid(formState).then(valid => {
             setIsButtonDisabled(!valid);
         });
-    }, [formState]);
+    }, [formState, formSchema]);
 
     // app functions
     const validateChange = e => {
@@ -57,6 +58,20 @@ const Form = () => {
     const formSubmit = e => {
         e.preventDefault();
         console.log('form submitted')
+        axios
+        .post("https://reqres.in/api/users", formState)
+        .then(response => {
+            console.log(response.data)
+          setPost(response.data);
+          setFormState({
+            name: "",
+            email: "",
+            motivation: "",
+            positions: "",
+            terms: ""
+          });
+        })
+        .catch(err => console.log("error!", err.response));
     }
 
     const inputChange = e => {
@@ -113,6 +128,7 @@ const Form = () => {
                 />
                 Terms & Conditions
             </label>
+
             <button disabled={isButtonDisabled} type="submit">
                 Submit
             </button>
