@@ -47,9 +47,11 @@ textarea {
 select {
   height: 40px;
   width: 325px;
+  transition: 1s;
 }
 
 select:focus {
+  transition: 1s;
   outline: none;
   border-color: $btn-light;
 }

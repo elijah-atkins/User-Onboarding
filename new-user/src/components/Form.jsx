@@ -94,6 +94,7 @@ const Form = ({ addUser }) => {
                     id="name"
                     type="text"
                     name="name"
+                    placeholder="Please enter full name"
                     value={formState.name}
                     onChange={inputChange}
                 />
@@ -104,6 +105,7 @@ const Form = ({ addUser }) => {
                 <input
                     type="email"
                     name="email"
+                    placeholder="Email"
                     value={formState.email}
                     onChange={inputChange}
                 />
@@ -127,8 +129,6 @@ const Form = ({ addUser }) => {
                     name="terms"
                     value={formState.terms}
                     onChange={inputChange}
-
-
                 />
                 Terms & Conditions
             </label>
