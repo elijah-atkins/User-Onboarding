@@ -2,10 +2,12 @@ import React, { useState, useEffect } from 'react';
 import * as yup from 'yup';
 import axios from 'axios';
 
-const Form = () => {
-    const [user, setUser] = useState([])
+
+const Form = ({ addUser }) => {
+
     // managing state for our form inputs
     const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+    const [check, setCheck] = useState(false)
 
     const [formState, setFormState] = useState({
         name: "",
@@ -57,20 +59,21 @@ const Form = () => {
 
     const formSubmit = e => {
         e.preventDefault();
+        setCheck(!check)
         axios
         .post("https://reqres.in/api/users", formState)
         .then(response => {
-          console.log(response.data)
-          setUser(response.data);
+          addUser(response.data);
           setFormState({
             name: "",
             email: "",
-            motivation: "",
-            positions: "",
+            password: "",
             terms: ""
           });
         })
         .catch(err => console.log("error!", err.response));
+
+        
     }
 
     const inputChange = e => {
@@ -124,13 +127,16 @@ const Form = () => {
                     name="terms"
                     value={formState.terms}
                     onChange={inputChange}
+
+
                 />
                 Terms & Conditions
             </label>
 
-            <button disabled={isButtonDisabled} type="submit">
+            <button disabled={isButtonDisabled} type="submit" >
                 Submit
             </button>
+
         </form>
     )
 }
