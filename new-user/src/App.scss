@@ -1,3 +1,9 @@
+
+$shadow: #151427;
+$white: rgb(245, 240, 240);
+$btn-light: #1eaee7;
+$btn-dark: #4d92e1;
+
 html {
   font-size: 62.5%;
 }
@@ -30,13 +36,13 @@ textarea {
   margin: 5px 0 0;
   display: block;
   width: 100%;
-  border: 2px solid rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba($shadow, 0.2);
   border-radius: 5px;
   padding: 10px;
   transition: all 0.3s;
   font-size: 1.4rem;
   letter-spacing: 0.5px;
-  background-color: white;
+  background-color: $white;
 }
 select {
   height: 40px;
@@ -45,12 +51,12 @@ select {
 
 select:focus {
   outline: none;
-  border-color: #1ee7e2;
+  border-color: $btn-light;
 }
 
 input:focus {
   outline: none;
-  border-color: #1ee7e2;
+  border-color: $btn-light;
 }
 
 input:placeholder {
@@ -67,24 +73,24 @@ button {
   border-radius: 5px;
   letter-spacing: 2px;
   outline: none;
-  background-color: #4dd0e1;
-  background-image: linear-gradient(to right, #4dd0e1, #1ee7e2);
-  color: #fff;
+  background-color: $btn-dark;
+  background-image: linear-gradient(to right, $btn-dark, $btn-light);
+  color: $white;
   cursor: pointer;
-  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 10px rgba($shadow, 0.1);
 }
 
 button:hover {
   background-image: none;
-  background-color: #4dd0e1;
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.3);
+  background-color: $btn-dark;
+  box-shadow: 0 5px 12px rgba($shadow, 0.3);
 }
 
 button:disabled {
   background-image: none;
-  background-color: white;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  color: rgba(0, 0, 0, 0.1);
+  background-color: $white;
+  border: 1px solid rgba($shadow, 0.1);
+  color: rgba($shadow, 0.1);
   cursor: not-allowed;
 }
 
