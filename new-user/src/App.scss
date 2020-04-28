@@ -3,14 +3,20 @@ $shadow: #151427;
 $white: rgb(245, 240, 240);
 $btn-light: #1eaee7;
 $btn-dark: #4d92e1;
+$grey: rgb(248, 241, 225);
 
 html {
   font-size: 62.5%;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(ellipse at 50% 50%, rgba($grey, .5), transparent),
+  linear-gradient($white, darken($white, 10%))
 }
 
 .App {
   font-family: sans-serif;
   text-align: center;
+
 }
 
 form {
