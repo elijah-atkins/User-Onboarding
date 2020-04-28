@@ -4,22 +4,22 @@ import axios from 'axios';
 
 const Form = () => {
     // managing state for our form inputs
+    const [isButtonDisabled, setIsButtonDisabled] = useState(true);
+
     const [formState, setFormState] = useState({
         name: "",
         email: "",
         password: "",
         terms: ""
-    })
+    });
     const [errors, setErrors] = useState({
         name: "",
         email: "",
         password: "",
         terms: ""
-    })
+    });
 
-    const [isButtonDisabled, setIsButtonDisabled] = useState(true);
-
-    //setting up form requirements with schema
+    //setting up form requirements with schema using yup
     const formSchema = yup.object().shape({
         name: yup
             .string()
@@ -30,19 +30,18 @@ const Form = () => {
             .required(),
         password: yup
             .string()
-            .required('Please Enter your password')
-            .matches(
-                /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/,
-                "Must Contain 6 Characters, One Uppercase, One Lowercase, One Number and one special case Character"
-            ),
-        terms: yup.boolean().oneOf([true]),
+            .required('Please Enter your password'),
+        terms: yup
+            .boolean()
+            .oneOf([true]),
+        
     })
 
     useEffect(() => {
         formSchema.isValid(formState).then(valid => {
             setIsButtonDisabled(!valid);
         });
-    }, [formState, formSchema]);
+    }, [formState]);
 
     // app functions
     const validateChange = e => {
@@ -108,6 +107,7 @@ const Form = () => {
                 <input
 
                     type="checkbox"
+                    name="terms"
                     value={formState.terms}
                     onChange={inputChange}
                 />
