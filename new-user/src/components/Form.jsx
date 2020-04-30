@@ -127,7 +127,7 @@ const Form = ({ addUser }) => {
 
                     type="checkbox"
                     name="terms"
-                    value={formState.terms}
+                    checked={formState.terms}
                     onChange={inputChange}
                 />
                 Terms & Conditions
