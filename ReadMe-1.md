@@ -27,11 +27,11 @@ This project is a continuation of the work you have done previously.
 - [x] Continue to make changes and push to the same branch
 - [x] Install Cypress with npm.
       `npm install cypress --save-dev`
-- [ ] run `npx cypress open`, After a moment, the Cypress Test Runner will launch.
-- [ ]  Locate the integration folder at cypress/integration in your code editor
-- [ ]  Create a form_test.js file.
-- [ ]  Watch the Cypress Test Runner update the list of specs.
-- [ ] Launch Cypress in interactive mode.
+- [x] run `npx cypress open`, After a moment, the Cypress Test Runner will launch.
+- [x]  Locate the integration folder at cypress/integration in your code editor
+- [x]  Create a form_test.js file.
+- [x]  Watch the Cypress Test Runner update the list of specs.
+- [x] Launch Cypress in interactive mode.
       
 *Note:* 
 You will see an error that says "No tests found in your file:" with your particular file path. This is because we have not written any tests yet. Now you will start writing tests.
@@ -42,12 +42,12 @@ In order to complete this challenge you will need to write and run the following
 
 Set up tests that will...
 
-- [ ]  Get the `Name` input and type a name in it.
-- [ ]  Use an assertion to check if the text inputted contains the name you provided (Hint: use the .should assertion)
-- [ ]  Get the `Email` input and type an email address in it
-- [ ] Get the `password` input and type a password in it
-- [ ]  Set up a test that will check to see if a user can check the terms of service box
-- [ ] Check to see if a user can submit the form data
+- [x]  Get the `Name` input and type a name in it.
+- [x]  Use an assertion to check if the text inputted contains the name you provided (Hint: use the .should assertion)
+- [x]  Get the `Email` input and type an email address in it
+- [x] Get the `password` input and type a password in it
+- [x]  Set up a test that will check to see if a user can check the terms of service box
+- [x] Check to see if a user can submit the form data
 - [ ] Check for form validation if an input is left empty
 
 ### Step 3: Stretch Goals

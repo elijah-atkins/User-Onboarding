@@ -94,6 +94,7 @@ const Form = ({ addUser }) => {
                     id="name"
                     type="text"
                     name="name"
+                    data-cy="name"
                     placeholder="Please enter full name"
                     value={formState.name}
                     onChange={inputChange}
@@ -106,6 +107,7 @@ const Form = ({ addUser }) => {
                     type="email"
                     name="email"
                     placeholder="Email"
+                    data-cy="email"
                     value={formState.email}
                     onChange={inputChange}
                 />
@@ -117,6 +119,7 @@ const Form = ({ addUser }) => {
 
                     type="password"
                     name="password"
+                    data-cy="password"
                     value={formState.password}
                     onChange={inputChange}
                 />
@@ -126,6 +129,7 @@ const Form = ({ addUser }) => {
                 <input
 
                     type="checkbox"
+                    data-cy="terms"
                     name="terms"
                     checked={formState.terms}
                     onChange={inputChange}
